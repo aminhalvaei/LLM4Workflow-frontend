@@ -59,7 +59,7 @@ const RewriteQuery: React.FC<RwriteQueryProps> = (props) => {
     try {
       setConfirmLoading(true);
       const res = await rewrite_query_chain.invoke({ ...values });
-      if ((res?.length+1)/2 !== values.k) {
+      if (res?.length !== values.k) {
         throw new Error('Rewrite query failed');
       } else {
         props.setValue({ extracted_task: values.text, rewrite_queries: res });
