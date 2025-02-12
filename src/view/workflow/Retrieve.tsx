@@ -117,12 +117,14 @@ const RetrieveApi: React.FC<{
                 ?.map((item) => JSON.parse(item.doc.page_content).name)}
               options={props?.api_list?.map((item) => {
                 const content = JSON.parse(item.doc.page_content);
+                const totalScore = item.doc.metadata.total_score.toFixed(2);
                 return {
-                  label: content.name,
+                  label: `${content.name} ( total_score: ${totalScore})`,
                   value: content.name,
                 };
               })}
               onChange={onChange}
+              className="api-list-grid"
             ></Checkbox.Group>
             {props?.query_list && (
               <Button

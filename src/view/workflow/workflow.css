@@ -11,3 +11,10 @@
   height: 36px;
   color: #fff;
 }
+
+.api-list-grid .ant-checkbox-group-item {
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 5px;
+}
